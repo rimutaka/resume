@@ -91,12 +91,33 @@
     .superpower {
       line-height: 1.4em;
     }
+
+    /* reduced version for printing */
+    .prn .np {
+      display: none
+    }
+
+    .pp {
+      display: none
+    }
+
+    .prn .pp {
+      display: flex
+    }
   </style>
   <script type="text/javascript">
-    // This little script obfuscates the name for search engines if you don't want to be googled.
-    // Use a base64-encoder and replace 'TWF4IFZvc2tvYg==' with yours. Try https://base64encode.org/
-    // Alternatively, type in your name in the HTML title directly and delete this script.
-    window.onload = () => document.getElementById('name').innerText = window.atob('TWF4IFZvc2tvYg==');
+
+    window.onload = () => {
+      // This line obfuscates the person's name for search engines if you don't want to be googled.
+      // Use a base64-encoder (e.g. https://base64encode.org/) and replace 'TWF4IFZvc2tvYg==' with your encoded name.
+      // Alternatively, type in your name in the HTML title directly and delete this line.
+      document.getElementById('name').innerText = window.atob('TWF4IFZvc2tvYg==');
+
+      // This line checks if the URL contains `prn` in the query string and adds class name 'prn' to BODY element.
+      // That class name triggers a reduced version of the document suitable for printing on a single page. 
+      if (window.location.search.includes('prn')) document.getElementsByTagName('body')[0].classList.add('prn');
+    }
+    
   </script>
 </head>
 
@@ -121,7 +142,7 @@
     <div class="row mb-2">
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm h-100">
-          <a href="https://sensorable.io" target="_blank"><img class="bd-placeholder-img card-img-top" width="100%"
+          <a href="https://sensorable.io" target="_blank"><img class="bd-placeholder-img card-img-top np" width="100%"
               src="img/sensorable-thumb.jpg" alt="Sensorable Systems"></a>
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-primary">Bits</span> + <span
@@ -138,7 +159,7 @@
 
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm h-100">
-          <a href="http://mventory.com" target="_blank"><img class="bd-placeholder-img card-img-top" width="100%"
+          <a href="http://mventory.com" target="_blank"><img class="bd-placeholder-img card-img-top np" width="100%"
               src="img/mventory-thumb.png" alt="mVentory"></a>
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-success">Atoms</span> ⇨ <span
@@ -154,7 +175,7 @@
 
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm h-100">
-          <a href="http://zetaprints.com" target="_blank"><img class="bd-placeholder-img card-img-top" width="100%"
+          <a href="http://zetaprints.com" target="_blank"><img class="bd-placeholder-img card-img-top np" width="100%"
               src="img/zetaprints-thumb.png" alt="ZetaPrints"></a>
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-primary">Bits</span> ⇨ <span
@@ -172,25 +193,27 @@
   </div>
 
   <main role="main" class="container">
-    <div class="row">
-      <div class="col-md-8 blog-main mt-5">
+    <div class="row h-100">
+      <div class="col-md-8 blog-main mt-5 order-2 order-md-1">
         <h5 class="text-secondary superpower">My main contribution to creation of several successful
           products was my ability to conceptualize ideas and my practical skills to bring them to life.</h5>
 
         <hr>
 
-        <div class="blog-post mt-5">
+        <div class="blog-post mt-5 np">
           <h2 class="blog-post-title">Experience as a founder</h2>
           <p class="blog-post-meta">2 failures, 1 exit, 1 OK</p>
 
-          <p>My primary focus as a founder was always on the customer, then the product. The mission of solving an interesting
+          <p>My primary focus as a founder was always on the customer, then the product. The mission of solving an
+            interesting
             problem and having happy customers gives me most satisfaction. Doing it as part of a great team is a bonus.
           </p>
 
 
           <h5 class="mt-5 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints</h5>
           <p>I developed the core solution using Microsoft technologies. The demand outgrew
-            what a solo founder-developer could provide and I shifted my role to product management, customer support and
+            what a solo founder-developer could provide and I shifted my role to product management, customer support
+            and
             coordinating a small distributed team that stayed together for many years.</p>
           <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
             millions of designs created and printed, financially successful.</p>
@@ -234,7 +257,7 @@
 
         </div>
 
-        <div class="blog-post">
+        <div class="blog-post np">
           <h2 class="blog-post-title">Other projects</h2>
           <p class="blog-post-meta">Various jobs and projects I did in between</p>
 
@@ -257,9 +280,16 @@
             </li>
           </ul>
         </div>
+        <div class="row h-50 mt-5 pp">
+          <div class="col align-self-center mt-5">
+            <h4 class="text-center mb-5 ">View my full résumé on GitHub</h4>
+            <p class=" text-center mt-5"><a
+                href="https://rimutaka.github.io/resume/">https://rimutaka.github.io/resume</a></p>
+          </div>
+        </div>
       </div>
 
-      <aside class="col-md-4 blog-sidebar bg-light rounded">
+      <aside class="col-md-4 blog-sidebar bg-light rounded order-1 order-md-2 mt-4">
         <div class="p-4 mb-3 ">
           <h4 class="font-italic">What I do</h4>
           <p class="mb-0">I turn ideas into functional digital and physical products: <i>from defining a problem to a
@@ -269,32 +299,32 @@
         <div class="p-4">
           <h4 class="font-italic">Skills</h4>
           <dl class="list-unstyled mb-1">
-            <dt>I am a generalist</dt>
+            <dt class="np">I am a generalist</dt>
             <dd>My strongest skill is in bridging the gap between business, customers and technical experts</dd>
             <dt>People</dt>
-            <dd>Requirements, customer service, content writing, team coordination</dd>
+            <dd class="np">Requirements, customer service, content writing, team coordination</dd>
             <dt>Solution architecture</dt>
-            <dd>System design, integration, rapid prototyping</dd>
+            <dd class="np">System design, integration, rapid prototyping</dd>
             <dt>Backend</dt>
-            <dd>.Net, .NetCore, C#, Vb.Net, MS SQL, IIS</dd>
+            <dd class="np">.Net, .NetCore, C#, Vb.Net, MS SQL, IIS</dd>
             <dt>AWS</dt>
-            <dd>EC2, Lambda, DynamoDB, S3, IAM, SNS, SQS, AppSync</dd>
+            <dd class="np">EC2, Lambda, DynamoDB, S3, IAM, SNS, SQS, AppSync</dd>
             <dt>Frontend</dt>
-            <dd>HTML, CSS, JS, GraphQL, VueJS</dd>
+            <dd class="np">HTML, CSS, JS, GraphQL, VueJS</dd>
             <dt>DevOps</dt>
-            <dd>Git, Terraform, Jira, Confluence, remote teams</dd>
+            <dd class="np">Git, Terraform, Jira, Confluence, remote teams</dd>
             <dt>Electronics</dt>
-            <dd>KiCAD, PCBA, troubleshooting, prototyping</dd>
+            <dd class="np">KiCAD, PCBA, troubleshooting, prototyping</dd>
             <dt>Mechanical</dt>
-            <dd>3D design, 3D printing, assembly, prototyping</dd>
+            <dd class="np">3D design, 3D printing, assembly, prototyping</dd>
             <dt>Embedded</dt>
-            <dd>C, C++, testing, integration</dd>
+            <dd class="np">C, C++, testing, integration</dd>
           </dl>
-          <p class="mb-0 border-top mt-1 pt-1"><strong>I am a perpetual learner.</strong> If there is a new skill I
+          <p class="mb-0 border-top mt-1 pt-1 np"><strong>I am a perpetual learner.</strong> If there is a new skill I
             need to learn I go and learn it.</p>
         </div>
 
-        <div class="p-4">
+        <div class="p-4 np">
           <h4 class="font-italic">Core beliefs</h4>
           <ol class="list-unstyled mb-1">
             <li><i class="fal fa-digging mr-2"></i>Just do it</li>
@@ -305,7 +335,7 @@
           </ol>
         </div>
 
-        <div class="p-4 border-top">
+        <div class="p-4 border-top np">
           <dl class="list-unstyled mb-1">
             <dt>Location</dt>
             <dd>Auckland, New Zealand</dd>
@@ -322,11 +352,11 @@
 
   </main><!-- /.container -->
 
-  <footer class="blog-footer mt-4">
-    <p><a href="https://getbootstrap.com/"><i class="fab fa-bootstrap mx-1"></i> <a
-          href="https://github.com/rimutaka/resume"><i class="fab fa-github mx-1"></i></a> <a rel="license"
-          class=" mx-1" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License"
-            style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></p>
+  <footer class="blog-footer mt-4 np">
+    <p><a href="https://getbootstrap.com/"><i class="fab fa-bootstrap mx-1"></i></a> <a
+        href="https://github.com/rimutaka/resume"><i class="fab fa-github mx-1"></i></a> <a rel="license" class=" mx-1"
+        href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0"
+          src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></p>
   </footer>
 </body>
 

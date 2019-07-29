@@ -19,6 +19,11 @@ The **layout and styles** are based on [Bootstrap v.4](https://getbootstrap.com/
 
 I used some **commercial icons** from [FontAwesome Pro](https://fontawesome.com/). They require a paid subscription. You can opt out by using their free styles and designs. I find the Pro version more elegant and well worth the money.
 
+### Print or PDF versions
+
+Google Chrome prints a better version than FireFox, but neither is good enough when printed or saved as PDF.
+Append `?prn` to the URL to produce a simplified, single page version with a link to the full version on GitHub. E.g. http://cv.onebro.me/?prn.
+
 ----
 
 
