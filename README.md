@@ -1,5 +1,4 @@
-# Minimalist résumé template
-#### Product Manager
+# Minimalistic résumé template: product manager role
 
 **Live demo: https://cv.onebro.me**
 
