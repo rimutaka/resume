@@ -53,7 +53,7 @@ The **printing template** is intentionally stripped down from most of the conten
 * my target audience doesn't need explaining what GitHub is
 * they can always print the full version if they need to
 
-So the printing template is a document you submit to some online HR system because it only take a PDF or MS Word file. If what they see in there is not enough to make them reach for the online version it's probably a lost cause anyway. I may be completely wrong here.
+So the printing template is a document you submit to some online HR system because it only takes a PDF or MS Word file. If what they see in there is not enough to make them reach for the online version it's probably a lost cause anyway. I may be completely wrong here.
 
 
 ----
