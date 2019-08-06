@@ -89,7 +89,30 @@
     }
 
     .superpower {
-      line-height: 1.4em;
+      line-height: 1.5em;
+      margin: 50px auto;
+      font-size: 2em;
+    }
+
+    .reference {
+      line-height: 1.45em;
+      font-size: 1.2em;
+    }
+
+    .ref-mark {
+      margin-top: -10px;
+    }
+
+    .ref-text {
+      font-size: 1.2em;
+    }
+
+    .carousel-indicators {
+      bottom: -1.7em;
+    }
+
+    .carousel-indicators li {
+      background-color: #333;
     }
 
     /* reduced version for printing */
@@ -108,22 +131,21 @@
   <script type="text/javascript">
 
     window.onload = () => {
-      // This line obfuscates the person's name for search engines if you don't want to be googled.
-      // Use a base64-encoder (e.g. https://base64encode.org/) and replace 'TWF4IFZvc2tvYg==' with your encoded name.
-      // Alternatively, type in your name in the HTML title directly and delete this line.
-      document.getElementById('name').innerText = window.atob('TWF4IFZvc2tvYg==');
-
       // This line checks if the URL contains `prn` in the query string and adds class name 'prn' to BODY element.
       // That class name triggers a reduced version of the document suitable for printing on a single page. 
       if (window.location.search.includes('prn')) document.getElementsByTagName('body')[0].classList.add('prn');
+
+      $('.carousel').carousel({
+        interval: 10000 // display each testimonial for 10s
+      })
     }
-    
   </script>
 </head>
 
 <body>
   <div class="container">
 
+    <!-- THE VERY TOP HEADER -->
     <header class="blog-header py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col text-center">
@@ -132,11 +154,27 @@
       </div>
     </header>
 
+    <!-- NAME AND ROLE -->
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic" id="name">github://rimutaka</h1>
-        <p class="lead my-3">Product Manager for early stage projects</p>
+        <h1 class="display-4 font-italic" id="name">Max Voskob</h1>
+        <p class="lead my-3">A Product Manager for early stage projects</p>
       </div>
+    </div>
+
+    <div class="mt-md-4 np">
+      &nbsp;
+    </div>
+
+    <div class="row">
+      <div class="col-md-10  offset-md-1">
+        <h5 class="text-secondary superpower">I turn ideas into digital and physical products: <i>from defining a
+            problem, to a concept, to an MVP, to a fully functional solution</i></h5>
+      </div>
+    </div>
+
+    <div class="mt-4 np">
+      &nbsp;
     </div>
 
     <div class="row mb-2">
@@ -194,110 +232,12 @@
 
   <main role="main" class="container">
     <div class="row h-100">
-      <div class="col-md-8 blog-main mt-5 order-2 order-md-1">
-        <h5 class="text-secondary superpower">My main contribution to creation of several successful
-          products was my ability to conceptualize ideas and my practical skills to bring them to life.</h5>
-
-        <hr>
-
-        <div class="blog-post mt-5 np">
-          <h2 class="blog-post-title">Experience as a founder</h2>
-          <p class="blog-post-meta">2 failures, 1 exit, 1 OK</p>
-
-          <p>My primary focus as a founder was always on the customer, then the product. The mission of solving an
-            interesting
-            problem and having happy customers gives me most satisfaction. Doing it as part of a great team is a bonus.
-          </p>
-
-
-          <h5 class="mt-5 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints</h5>
-          <p>I developed the core solution using Microsoft technologies. The demand outgrew
-            what a solo founder-developer could provide and I shifted my role to product management, customer support
-            and
-            coordinating a small distributed team that stayed together for many years.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
-            millions of designs created and printed, financially successful.</p>
-          <p><i class="fal fa-exclamation-circle mr-1"></i><strong>Highlights:</strong> use of then novel SaaS
-            model, early adoption of AWS, building a distributed team.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent customer
-            service, how to work across 4 timezones.</p>
-          <hr class="px-5 mx-5">
-
-          <h5 class="mt-5 logo" style="background-image: url(img/mventory-logo.png)">mVentory</h5>
-          <p>Initially a side project, we switched ZetaPrints team to working on mVentory. I was solely focused on
-            product management across Magento, Android, AWS and hardware peripherals.</p>
-          <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> make a digital product that
-            fits seamlessly into an ad hoc retail workflow.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> an easy to use system, tens of
-            thousands of products listed online by customers.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> solve problems worth solving, focus,
-            move
-            fast.</p>
-          <hr class="px-5 mx-5">
-
-          <h5 class="mt-5 logo" style="background-image: url(img/sensorable-logo.png)">Sensorable</h5>
-          <p>I started this project as a sole developer/engineer "hacking" Android code, making hardware and
-            electronics. The team grew to include an electronics engineer, a 3D-designer and a machine learning expert
-            as a co-founder.
-            Together we created a unique and fully functional product to make cities safer for cyclists,
-            pedestrians and road workers.</p>
-          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> hardware concept, manufacturing, field
-            testing, AWS cloud, UI, team coordination, customer relations.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> real-time on-device ANPR and vehicle
-            counting with only 2W of power.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team, advisors
-            and
-            investors.</p>
-
-          <hr class="px-5 mx-5">
-          <h5 class="mt-5">R.T.K.</h5>
-          <p>I bootstrapped a small fixed line telco company in my late teens, early 20's.<br>A mix of good luck, bold
-            decisions and an exceptional team helped us grow to 20,000+ subscribers in direct competition with the
-            state-owned monopoly. The business was acquired by a competitor.</p>
-
-        </div>
-
-        <div class="blog-post np">
-          <h2 class="blog-post-title">Other projects</h2>
-          <p class="blog-post-meta">Various jobs and projects I did in between</p>
-
-          <ul>
-            <li><a href="https://www.police.nsw.gov.au/" target="_blank"><strong>NSW Police</strong></a>: IT consultant,
-              1yr
-            </li>
-            <li><a href="http://rksolutions.net/" target="_blank"><strong>RK Solutions, IE</strong></a>: s/w developer,
-              11yrs
-            </li>
-            <li><a href="https://www.mastersoftgroup.com/" target="_blank"><strong>MSI NZ</strong></a>: IT consultant,
-              2yrs
-            </li>
-            <li><a href="https://en.wikipedia.org/wiki/Electronic_Data_Systems" target="_blank"><strong>EDS
-                  NZ</strong></a>: s/w developer, VB, MS SQL, 2yrs
-            </li>
-            <li><strong>Safe & Secure</strong>: alarm installer, 2 months
-            </li>
-            <li><strong>Rostov City Telephone Network</strong>: linesman, technician, cable splicer, 3 yrs
-            </li>
-          </ul>
-        </div>
-        <div class="row h-50 mt-5 pp">
-          <div class="col align-self-center mt-5">
-            <h4 class="text-center mb-5 ">View my full résumé on GitHub</h4>
-            <p class=" text-center mt-5"><a
-                href="https://rimutaka.github.io/resume/">https://rimutaka.github.io/resume</a></p>
-          </div>
-        </div>
-      </div>
-
-      <aside class="col-md-4 blog-sidebar bg-light rounded order-1 order-md-2 mt-4">
-        <div class="p-4 mb-3 ">
-          <h4 class="font-italic">What I do</h4>
-          <p class="mb-0">I turn ideas into functional digital and physical products: <i>from defining a problem to a
-              concept, to an MVP, to a fully functional product.</i></p>
-        </div>
-
+      <!-- SKILLS SIDEBAR -->
+      <aside class="col-md-4 blog-sidebar bg-light rounded mt-4">
         <div class="p-4">
           <h4 class="font-italic">Skills</h4>
+          <p class="mb-4">My main contribution to creation of several successful
+            products was my ability to conceptualize ideas and use my practical skills to bring the ideas to life.</p>
           <dl class="list-unstyled mb-1">
             <dt class="np">I am a generalist</dt>
             <dd>My strongest skill is in bridging the gap between business, customers and technical experts</dd>
@@ -324,6 +264,7 @@
             need to learn I go and learn it.</p>
         </div>
 
+        <!-- METHODOLOGY -->
         <div class="p-4 np">
           <h4 class="font-italic">Core beliefs</h4>
           <ol class="list-unstyled mb-1">
@@ -335,6 +276,7 @@
           </ol>
         </div>
 
+        <!-- CONTACT -->
         <div class="p-4 border-top np">
           <dl class="list-unstyled mb-1">
             <dt>Location</dt>
@@ -344,20 +286,181 @@
           </dl>
         </div>
 
+      </aside>
 
+      <!-- MAIN CONTENTS -->
+      <div class="col-md-8 blog-main mt-5">
+        <!-- TESTIMONIALS -->
+        <div class="row text-secondary no-gutters mt-md-5 np">
+          <div class="col-1 text-right ref-mark">
+            <h1>“</h1>
+          </div>
 
-      </aside><!-- /.blog-sidebar -->
+          <div class="col pl-2">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <h5 class="ref-text">
+                    The experience I gained working with Max on ZetaPrints web-to-print system made me the designer I am
+                    today.
+                  </h5>
+                  <p class="text-right mr-5">
+                    <i>Atanas Gurkov, graphic designer</i> <a href="http://atanasgurkov.com"
+                      class="px-1 ml-2 text-secondary"><i class="fal fa-globe"></i></a>
+                  </p>
+                </div>
+                <div class="carousel-item">
+                  <h5 class="ref-text">
+                    Although we encountered many obstacles on our journey with Sensorable, team cohesion always remained
+                    strong.
+                  </h5>
+                  <p class="text-right mr-5">
+                    <i>Dr Arno Leist, co-founder</i> <a href="https://www.linkedin.com/in/arnoleist/"
+                      class="ml-2 px-1 text-secondary"><i class="fab fa-linkedin"></i></a>
+                  </p>
+                </div>
+                <div class="carousel-item hidden">
+                  <h5 class="ref-text">
+                    I have worked with Max since 2006 when he helped me set up an on line print ordering site. The site
+                    has served me extremely well and I still use it.
+                  </h5>
+                  <p class="text-right mr-5">
+                    <i>Tim Beer, Owner Web2print</i> <a href="https://www.linkedin.com/in/tim-beere-99b32810/"
+                      class="ml-2 px-1 text-secondary"><i class="fab fa-linkedin"></i></a>
+                  </p>
+                </div>
+              </div>
 
-    </div><!-- /.row -->
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
 
-  </main><!-- /.container -->
+            </div>
+          </div>
+        </div>
 
+        <hr class="np">
+
+        <!-- EXPERIENCE -->
+        <div class="blog-post mt-5 np">
+          <h2 class="blog-post-title">Experience as a founder</h2>
+          <p class="blog-post-meta">2 failures, 1 exit, 1 OK</p>
+
+          <p>My primary focus as a founder was always on the customer, then the product. The mission of solving an
+            interesting
+            problem and having happy customers gives me most satisfaction. Doing it as part of a great team is a bonus.
+          </p>
+
+          <!-- PROJECT 1 -->
+          <h5 class="mt-5 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints</h5>
+          <p>I was intrigued by the complexity of ordering print online and developed an MVP solution using Microsoft
+            technologies. The demand outgrew what a solo founder-developer could provide and I shifted my role to
+            product management, customer support and coordinating a small distributed team that stayed together for many
+            years.</p>
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
+            millions of designs created and printed, financially successful.</p>
+          <p><i class="fal fa-exclamation-circle mr-1"></i><strong>Highlights:</strong> use of then novel SaaS
+            model, early adoption of AWS, building a distributed team.</p>
+          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent customer
+            service, how to work across 4 timezones.</p>
+          <hr class="px-5 mx-5">
+
+          <!-- PROJECT 2 -->
+          <h5 class="mt-5 logo" style="background-image: url(img/mventory-logo.png)">mVentory</h5>
+          <p>Initially a side project, we switched ZetaPrints team to working on this completely new opportunity. I
+            was solely focused on product management across Magento, Android, AWS and hardware peripherals. Most of my
+            time was spent in shops and warehouses working closely with customers and relaying my experiences and ideas
+            back to the
+            team.</p>
+          <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> make a digital product that
+            fits seamlessly into an ad hoc retail workflow.</p>
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> an easy to use system, tens of
+            thousands of products listed online by customers.</p>
+          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> solve problems worth solving, focus,
+            move
+            fast.</p>
+          <hr class="px-5 mx-5">
+
+          <!-- PROJECT 3 -->
+          <h5 class="mt-5 logo" style="background-image: url(img/sensorable-logo.png)">Sensorable</h5>
+          <p>I started this project as a sole developer/engineer "hacking" Android code, making hardware and
+            electronics. The team grew to include an electronics engineer, a 3D-designer and a machine learning expert
+            as a co-founder.
+            Together we created a unique and fully functional product to make cities safer for cyclists,
+            pedestrians and road workers.</p>
+          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> hardware concept, manufacturing, field
+            testing, AWS cloud, UI, team coordination, customer relations.</p>
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> real-time on-device ANPR and vehicle
+            counting with only 2W of power.</p>
+          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team, advisors
+            and
+            investors.</p>
+
+          <!-- PROJECT 4 -->
+          <hr class="px-5 mx-5">
+          <h5 class="mt-5">R.T.K.</h5>
+          <p>I bootstrapped a small fixed line telco company in my late teens, early 20's.<br>A mix of good luck, bold
+            decisions and an exceptional team helped us grow to 20,000+ subscribers in direct competition with the
+            state-owned monopoly. The business was acquired by a competitor.</p>
+
+        </div>
+
+        <!-- OTHER MINOR PROJECTS -->
+        <div class="blog-post np">
+          <h2 class="blog-post-title">Other projects</h2>
+          <p class="blog-post-meta">Various jobs and projects I did in between</p>
+
+          <ul>
+            <li><a href="https://www.police.nsw.gov.au/" target="_blank"><strong>NSW Police</strong></a>: IT consultant,
+              1yr
+            </li>
+            <li><a href="http://rksolutions.net/" target="_blank"><strong>RK Solutions, IE</strong></a>: s/w developer,
+              11yrs
+            </li>
+            <li><a href="https://www.mastersoftgroup.com/" target="_blank"><strong>MSI NZ</strong></a>: IT consultant,
+              2yrs
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/Electronic_Data_Systems" target="_blank"><strong>EDS
+                  NZ</strong></a>: s/w developer, VB, MS SQL, 2yrs
+            </li>
+            <li><strong>Safe & Secure</strong>: alarm installer, 2 months
+            </li>
+            <li><strong>Rostov City Telephone Network</strong>: linesman, technician, cable splicer, 3 yrs
+            </li>
+          </ul>
+        </div>
+
+        <!-- PRINT ONLY SECTION -->
+        <div class="row h-50 mt-5 pp">
+          <div class="col align-self-center mt-5">
+            <h4 class="text-center mb-5 ">View my full résumé on GitHub</h4>
+            <p class=" text-center mt-5"><a
+                href="https://rimutaka.github.io/resume/">https://rimutaka.github.io/resume</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="blog-footer mt-4 np">
     <p><a href="https://getbootstrap.com/"><i class="fab fa-bootstrap mx-1"></i></a> <a
         href="https://github.com/rimutaka/resume"><i class="fab fa-github mx-1"></i></a> <a rel="license" class=" mx-1"
         href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0"
           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></p>
   </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
