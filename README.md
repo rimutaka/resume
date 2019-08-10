@@ -1,6 +1,6 @@
 # Minimalistic résumé template: product manager role
 
-**Live demo: https://cv.onebro.me**
+## Live demo: https://cv.onebro.me
 
 
 ## Résumé contents
@@ -46,9 +46,9 @@ A product manager is a very varied role. You are not really an inventor, but you
 
 I intentionally **omitted some skills and traits** from the document. They should be evident by looking at this project as a whole. If they are not, then they shouldn't be included anyway. *E.g. do I know anything about marketing or do I have attention to detail?*
 
-The absence of **education section** is due to my lack of formal education. There is some room in the sidebar for that.
+The absence of **education section** is due to my lack of formal education. There is some room in the sidebar to insert yours.
 
-The **printing template** is intentionally stripped down from most of the content:
+The **printing template** is intentionally stripped down from most of the content and links directly to GitHub:
 * this is a living document, which a PDF file is not
 * my target audience doesn't need explaining what GitHub is
 * they can always print the full version if they need to
