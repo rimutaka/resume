@@ -88,8 +88,19 @@
       padding-left: 40px;
     }
 
-    .link-more {
-      font-size: 80%
+    .link-more,
+    .link-less {
+      font-size: 80%;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    .link-web {
+      font-size: 60%;
+    }
+
+    summary {
+      color: #007bff;
     }
 
     .superpower {
@@ -143,6 +154,17 @@
       // That class name triggers a reduced version of the document suitable for printing on a single page. 
       if (window.location.search.includes('prn')) document.getElementsByTagName('body')[0].classList.add('prn');
 
+      $($('summary').on('click', function (e) {
+        if ($(this).parent().is('[open]')) {
+          $(this).children('.link-more').removeClass('d-none');
+          $(this).children('.link-less').addClass('d-none');
+        }
+        else {
+          $(this).children('.link-more').addClass('d-none');
+          $(this).children('.link-less').removeClass('d-none');
+        }
+      }));
+
       $('.carousel').carousel({
         interval: 10000 // display each testimonial for 10s
       })
@@ -193,12 +215,9 @@
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-primary">Bits</span> + <span
                 class="text-success">Atoms</span></strong>
-            <h3 class="mb-0">Battery-powered AI camera</h3>
-            <div class="mb-1 text-muted">2016 - 2019</div>
-            <p class="card-text mb-3">An Android-based AI camera for security, road safety and traffic
-              analysis. Includes hardware, embedded and cloud software.</p>
-              <p><i>From inception to                 pre-production.</i></p>
-            <a href="https://sensorable.io" target="_blank">sensorable.io</a>
+            <h3 class="mb-4">Battery-powered AI camera</h3>
+            <p>From inception to pre-production.</p>
+            <p class="text-center mb-0"><a href="https://sensorable.io" target="_blank">sensorable.io</a></p>
           </div>
         </div>
       </div>
@@ -210,12 +229,9 @@
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-success">Atoms</span> ⇨ <span
                 class="text-primary">Bits</span></strong>
-            <h3 class="mb-0">E-commerce inventory system</h3>
-            <div class="mb-1 text-muted">2013 - 2016</div>
-            <p class="card-text mb-3">A mobile inventory system for creating beautifully photographed
-              and well described e-commerce listings.</p>
-              <p><i>From inception to production and support.</i></p>
-            <a href="http://mventory.com" target="_blank">mventory.com</a>
+            <h3 class="mb-4">E-commerce inventory system</h3>
+            <p>From inception to production and support.</p>
+            <p class="text-center mb-0"><a href="http://mventory.com" target="_blank">mventory.com</a></p>
           </div>
         </div>
       </div>
@@ -227,12 +243,9 @@
           <div class="card-body">
             <strong class="d-inline-block mb-2"><span class="text-primary">Bits</span> ⇨ <span
                 class="text-success">Atoms</span></strong>
-            <h3 class="mb-0">Dynamic image generation</h3>
-            <div class="mb-1 text-muted">2006 - 2015</div>
-            <p class="card-text mb-3">An online ordering system for commercial printers to take personalized orders
-              using sophisticated design templates.</p>
-              <p><i>From inception to production and support.</i></p>
-            <a href="http://zetaprints.com" target="_blank">zetaprints.com</a>
+            <h3 class="mb-4">Dynamic image generation</h3>
+            <p>From inception to production and support.</p>
+            <p class="text-center mb-0"><a href="http://zetaprints.com" target="_blank">zetaprints.com</a></p>
           </div>
         </div>
       </div>
@@ -308,24 +321,34 @@
           </p>
 
           <!-- PROJECT 1 -->
-          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints<span
-              class="ml-3 text-secondary">2006 - 2015</span></h4>
-          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> company founder, initially solo developer, later product leader.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
-            millions of designs created and printed, financially successful.</p>
-          <p><i class="fal fa-exclamation-circle mr-1"></i><strong>Highlights:</strong> use of then novel SaaS
-            model, early adoption of AWS, building a distributed team.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent customer
-            service, how to work across 4 timezones.</p>
-          <p class="d-none">I was intrigued by the complexity of ordering print online and developed an MVP solution using Microsoft
-            technologies. The demand outgrew what a solo founder-developer could provide and I shifted my role to
-            product management, customer support and coordinating a small distributed team that stayed together for many
-            years. <a class="link-more" href="http://zetaprints.com">More ...</a></p>
-          <hr class="px-5 mx-5">
+          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/sensorable-logo.png)">Sensorable<span
+              class="ml-3 text-secondary">2016 - 2019</span></h4>
+          <p class="text-secondary mb-3"><i>An Android-based AI camera for security, road safety and traffic
+              analysis. Includes hardware, embedded and cloud software.</i></p>
+          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> co-founder, hardware concept, manufacturing,
+            field
+            testing, AWS cloud, UI, team coordination, customer relations.</p>
+          <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> applying agile software methodology to a hardware project.</p>
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> successful completion of R&D 30% under budget.</p>
+          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team, advisors
+            and investors.</p>
+          <details>
+            <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
+            <span> I started this project as a sole developer/engineer "hacking" Android code, making hardware
+              and
+              electronics. The team grew to include an electronics engineer, a 3D-designer and a machine learning expert
+              as a co-founder.
+              Together we created a unique and fully functional product to make cities safer for cyclists,
+              pedestrians and road workers.<a class="link-web ml-2" target="_blank" href="https://sensorable.io"><i
+                  class="fal fa-external-link"></i></a></span>
+          </details>
+          <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 2 -->
           <h4 class="mt-5 mb-4 logo" style="background-image: url(img/mventory-logo.png)">mVentory<span
               class="ml-3 text-secondary">2013 - 2016</span></h4>
+          <p class="text-secondary mb-3"><i>A mobile inventory system for creating beautifully photographed
+              and well described e-commerce listings.</i></p>
           <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> co-founder, product leader.</p>
           <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> make a digital product that
             fits seamlessly into an ad hoc retail workflow.</p>
@@ -334,28 +357,43 @@
           <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> solve problems worth solving, focus,
             move
             fast.</p>
-          <p class="d-none">Initially a side project, we switched ZetaPrints team to working on this completely new opportunity. I
-            was solely focused on product management across Magento, Android, AWS and hardware peripherals. Most of my
-            time was spent in shops and warehouses working closely with customers and relaying my experiences and ideas
-            back to the team. <a class="link-more" href="http://mventory.com">More ...</a></p>
-          <hr class="px-5 mx-5">
+          <details>
+            <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
+            <span> Initially a side project, we switched ZetaPrints team to working on this completely new
+              opportunity. I
+              was solely focused on product management across Magento, Android, AWS and hardware peripherals. Most of my
+              time was spent in shops and warehouses working closely with customers and relaying my experiences and
+              ideas
+              back to the team.<a class="link-web ml-2" target="_blank" href="http://mventory.com"><i
+                  class="fal fa-external-link"></i></a></span>
+          </details>
+          <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 3 -->
-          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/sensorable-logo.png)">Sensorable<span
-              class="ml-3 text-secondary">2016 - 2019</span></h4>
+          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints<span
+              class="ml-3 text-secondary">2006 - 2015</span></h4>
+          <p class="text-secondary mb-3"><i>An online ordering system for commercial printers to take personalized
+              orders
+              using sophisticated design templates.</i></p>
+          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> company founder, initially solo developer,
+            later product leader.</p>
+            <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> use of then novel SaaS
+              model, early adoption of AWS, building a distributed team.</p>
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
+            millions of designs created and printed, financially successful.</p>
 
-          <p><i class="fal fa-user-cog mr-1"></i><strong>My role:</strong> co-founder, hardware concept, manufacturing, field
-            testing, AWS cloud, UI, team coordination, customer relations.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> real-time on-device ANPR and vehicle
-            counting with only 2W of power.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team, advisors
-            and investors.</p>
-          <p class="d-none">I started this project as a sole developer/engineer "hacking" Android code, making hardware and
-            electronics. The team grew to include an electronics engineer, a 3D-designer and a machine learning expert
-            as a co-founder.
-            Together we created a unique and fully functional product to make cities safer for cyclists,
-            pedestrians and road workers. <a class="link-more" href="https://sensorable.io">More ...</a></p>
-          <hr class="px-5 mx-5">
+          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent customer
+            service, how to work across 4 timezones.</p>
+          <details>
+            <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
+            <span> I was intrigued by the complexity of ordering print online and developed an MVP solution using
+              Microsoft technologies. The demand outgrew what a solo founder-developer could provide and I shifted my
+              role to product management, customer support and coordinating a small distributed team that stayed
+              together for
+              many years.<a class="link-web ml-2" target="_blank" href="http://zetaprints.com"><i
+                  class="fal fa-external-link"></i></a></span>
+          </details>
+          <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 4 -->
           <h4 class="mt-5 mb-4"><i class="fal fa-network-wired mr-3"></i>R.T.K.<span class="ml-3 text-secondary">1993 -
