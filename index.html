@@ -140,11 +140,41 @@
     }
 
     .pp {
-      display: none
+      display: none;
     }
 
     .prn .pp {
-      display: flex
+      display: block;
+    }
+
+    .prn .p-md-5.rp {
+      padding: 1rem !important;
+    }
+
+    .prn .mt-5.rp {
+      margin-top: 1.2rem !important;
+    }
+
+    .prn p {
+      margin-bottom: 0.3rem;
+    }
+
+    .prn .mb-4 {
+      margin-bottom: .5rem !important;
+    }
+
+    .prn .superpower {
+      margin: 20px auto;
+    }
+
+    @media print {
+      .page-break {
+        page-break-before: always;
+      }
+
+      .prn .page-break {
+        page-break-before: avoid;
+      }
     }
   </style>
   <script type="text/javascript">
@@ -176,7 +206,7 @@
   <div class="container">
 
     <!-- THE VERY TOP HEADER -->
-    <header class="blog-header py-3">
+    <header class="blog-header py-3 np">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col text-center">
           <span class="blog-header-logo text-dark">résumé</span>
@@ -185,10 +215,10 @@
     </header>
 
     <!-- NAME AND ROLE -->
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark rp">
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic" id="name">Max Voskob</h1>
-        <p class="lead my-3">A Product Manager for early stage projects</p>
+        <p class="lead my-3">A Product Leader for early stage projects</p>
       </div>
     </div>
 
@@ -207,7 +237,7 @@
       &nbsp;
     </div>
 
-    <div class="row mb-2">
+    <div class="row mb-2 np">
       <div class="col-md-4 mb-4 mb-md-0">
         <div class="card mb-4 shadow-sm h-100">
           <a href="https://sensorable.io" target="_blank"><img class="bd-placeholder-img card-img-top np" width="100%"
@@ -253,11 +283,11 @@
     </div>
   </div>
 
-  <main role="main" class="container">
+  <main role="main" class="container page-break">
     <div class="row h-100">
 
       <!-- MAIN CONTENTS -->
-      <div class="col-md-8 blog-main mt-5 order-2 order-md-1">
+      <div class="col-md-8 blog-main mt-5 order-2 order-md-1 rp">
         <!-- TESTIMONIALS -->
         <div class="row text-secondary no-gutters mt-md-5 np">
           <div class="col-1 text-right ref-mark">
@@ -312,16 +342,17 @@
         <hr class="np">
 
         <!-- EXPERIENCE -->
-        <div class="blog-post mt-5 ml-md-5 np">
-          <h2 class="blog-post-title">Product Management Experience</h2>
-          <p class="blog-post-meta">2 failures, 1 success, 1 OK</p>
+        <div class="blog-post mt-5 ml-md-5 rp">
+          <h2 class="blog-post-title np">Product Management Experience</h2>
+          <p class="blog-post-meta np">2 failures, 1 success, 1 OK</p>
 
-          <p>I am mission-driven. My focus is on the customer first, then on the product. Solving an interesting
+          <p class="np">I am mission-driven. My focus is on the customer first, then on the product. Solving an
+            interesting
             problem and having happy customers gives me most satisfaction. Doing it as part of a great team is a bonus.
           </p>
 
           <!-- PROJECT 1 -->
-          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/sensorable-logo.png)">Sensorable<span
+          <h4 class="mt-5 mb-4 logo rp" style="background-image: url(img/sensorable-logo.png)">Sensorable<span
               class="ml-3 text-secondary">2016 - 2019</span></h4>
           <p class="text-secondary mb-3"><i>An Android-based AI camera for security, road safety and traffic
               analysis. Includes hardware, embedded and cloud software.</i></p>
@@ -330,11 +361,13 @@
             testing, AWS cloud, UI, team coordination, customer relations.</p>
           <p><i class="fal fa-lightbulb-exclamation mr-1"></i><strong>Challenges:</strong> finding a balance between
             cost, features and h/w capabilities.</p>
-          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> launch of an R&D-heavy product on time
+          <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> launch of an R&amp;D-heavy product on
+            time
             and 30% under budget.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team, advisors
+          <p class="np"><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> the value of a great team,
+            advisors
             and investors.</p>
-          <details>
+          <details class="np">
             <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
             <span>The project started with me "hacking" Android code, making hardware and electronics for a
               battery-powered wireless camera. After a series of prototypes and initial market validation, the team grew
@@ -347,7 +380,7 @@
           <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 2 -->
-          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/mventory-logo.png)">mVentory<span
+          <h4 class="mt-5 mb-4 logo rp" style="background-image: url(img/mventory-logo.png)">mVentory<span
               class="ml-3 text-secondary">2013 - 2016</span></h4>
           <p class="text-secondary mb-3"><i>A mobile inventory system for creating beautifully photographed
               and well described e-commerce listings.</i></p>
@@ -356,10 +389,11 @@
             fits seamlessly into an ad hoc retail workflow.</p>
           <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> an easy to use system, tens of
             thousands of products listed online by customers.</p>
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> solve problems worth solving, focus,
+          <p class="np"><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> solve problems worth
+            solving, focus,
             move
             fast.</p>
-          <details>
+          <details class="np">
             <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
             <span> Originally a side project within ZetaPrints team, we gradually switched over to working on this
               completely new
@@ -373,7 +407,7 @@
           <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 3 -->
-          <h4 class="mt-5 mb-4 logo" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints<span
+          <h4 class="mt-5 mb-4 logo rp" style="background-image: url(img/zetaprints-logo.png)">ZetaPrints<span
               class="ml-3 text-secondary">2006 - 2015</span></h4>
           <p class="text-secondary mb-3"><i>An online ordering platform for commercial printers to take personalized
               orders
@@ -385,12 +419,14 @@
           <p><i class="fal fa-trophy-alt mr-1"></i><strong>Achievements:</strong> thousands of happy customers,
             millions of designs created and printed, financially successful.</p>
 
-          <p><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent customer
+          <p class="np"><i class="fal fa-graduation-cap mr-1"></i><strong>Takeaways:</strong> importance of excellent
+            customer
             service, how to work across 4 timezones.</p>
-          <details>
+          <details class="np">
             <summary><span class="link-more">More ...</span><span class="link-less d-none">Less ...</span></summary>
             <span> I was intrigued by the complexity of ordering print online and developed an MVP solution using
-              Microsoft technologies. It took off and the demand outgrew what a solo developer could provide. I shifted my
+              Microsoft technologies. It took off and the demand outgrew what a solo developer could provide. I shifted
+              my
               role to product management, customer support and coordinating a small distributed team that stayed
               together for
               many years.<a class="link-web ml-2" target="_blank" href="http://zetaprints.com"><i
@@ -399,11 +435,20 @@
           <hr class="px-5 mx-5 mt-4">
 
           <!-- PROJECT 4 -->
-          <h4 class="mt-5 mb-4"><i class="fal fa-network-wired mr-3"></i>R.T.K.<span class="ml-3 text-secondary">1993 -
+          <h4 class="mt-5 mb-4 np"><i class="fal fa-network-wired mr-3"></i>R.T.K.<span class="ml-3 text-secondary">1993
+              -
               1999</span></h4>
-          <p>I bootstrapped a small fixed line telco company in my late teens, early 20's.<br>A mix of good luck, bold
+          <p class="np">I bootstrapped a small fixed line telco company in my late teens, early 20's.<br>A mix of good
+            luck, bold
             decisions and an exceptional team helped us grow to 20,000+ subscribers in direct competition with the
             state-owned monopoly. The business was acquired by a competitor.</p>
+
+          <!-- PRINT ONLY SECTION -->
+          <div class="mt-5 pp">
+            <h4 class="text-center mb-3 ">View my full résumé on GitHub</h4>
+            <p class=" text-center"><a href="https://rimutaka.github.io/resume/">https://rimutaka.github.io/resume</a>
+            </p>
+          </div>
 
         </div>
 
@@ -413,17 +458,21 @@
           <p class="blog-post-meta">Various jobs and projects I did in between</p>
 
           <ul>
-            <li class="mb-2"><a href="https://www.police.nsw.gov.au/" target="_blank"><strong>NSW Police</strong></a>, AU: IT consultant,
-              1yr part-time<br/> <i class="text-secondary">XML, data architecture, system integration</i>
+            <li class="mb-2"><a href="https://www.police.nsw.gov.au/" target="_blank"><strong>NSW Police</strong></a>,
+              AU: IT consultant,
+              1yr part-time<br /> <i class="text-secondary">XML, data architecture, system integration</i>
             </li>
-            <li class="mb-2"><a href="http://rksolutions.net/" target="_blank"><strong>RK Solutions</strong></a>, IE: s/w developer,
-              11yrs part-time, remote<br/> <i class="text-secondary">.Net, MS SQL, solution architecture, integration</i>
+            <li class="mb-2"><a href="http://rksolutions.net/" target="_blank"><strong>RK Solutions</strong></a>, IE:
+              s/w developer,
+              11yrs part-time, remote<br /> <i class="text-secondary">.Net, MS SQL, solution architecture,
+                integration</i>
             </li>
-            <li class="mb-2"><a href="https://www.mastersoftgroup.com/" target="_blank"><strong>MSI NZ</strong></a>: IT consultant,
-              2yrs<br/> <i class="text-secondary">.Net, XML, data architecture, integration</i>
+            <li class="mb-2"><a href="https://www.mastersoftgroup.com/" target="_blank"><strong>MSI NZ</strong></a>: IT
+              consultant,
+              2yrs<br /> <i class="text-secondary">.Net, XML, data architecture, integration</i>
             </li>
             <li class="mb-2"><a href="https://en.wikipedia.org/wiki/Electronic_Data_Systems" target="_blank"><strong>EDS
-                  NZ</strong></a>: s/w developer, 2yrs <br/> <i class="text-secondary">VB, MS SQL</i>
+                  NZ</strong></a>: s/w developer, 2yrs <br /> <i class="text-secondary">VB, MS SQL</i>
             </li>
             <li><strong>Safe & Secure</strong>: alarm installer, 2 months
             </li>
@@ -432,15 +481,7 @@
           </ul>
         </div>
 
-        <!-- PRINT ONLY SECTION -->
-        <div class="row h-50 mt-5 pp">
-          <div class="col align-self-center mt-5">
-            <h4 class="text-center mb-5 ">View my full résumé on GitHub</h4>
-            <p class=" text-center mt-5"><a
-                href="https://rimutaka.github.io/resume/">https://rimutaka.github.io/resume</a>
-            </p>
-          </div>
-        </div>
+
       </div>
 
       <!-- SKILLS SIDEBAR -->
@@ -451,27 +492,28 @@
             technology.</p>
           <dl class="list-unstyled mb-1">
             <dt>People</dt>
-            <dd class="np">Understanding customers, coordinating teams, sharing knowledge</dd>
+            <dd class="">Understanding customers, coordinating teams, sharing knowledge</dd>
             <dt>Solution architecture</dt>
-            <dd class="np">System design, integration, rapid prototyping</dd>
+            <dd class="">System design, integration, rapid prototyping</dd>
             <dt>Backend</dt>
-            <dd class="np">.Net, .NetCore, C#, Vb.Net, MS SQL, IIS</dd>
+            <dd class="">.Net, .NetCore, C#, Vb.Net, MS SQL, IIS</dd>
             <dt>AWS</dt>
-            <dd class="np">EC2, Lambda, DynamoDB, S3, IAM, SNS, SQS, AppSync</dd>
+            <dd class="">EC2, Lambda, DynamoDB, S3, IAM, SNS, SQS, AppSync</dd>
             <dt>Frontend</dt>
-            <dd class="np">HTML, CSS, JS, GraphQL, VueJS</dd>
+            <dd class="">HTML, CSS, JS, GraphQL, VueJS</dd>
             <dt>DevOps</dt>
-            <dd class="np">Git, Terraform, Jira, Confluence, remote teams</dd>
+            <dd class="">Git, Terraform, Jira, Confluence, remote teams</dd>
             <dt>Electronics</dt>
-            <dd class="np">KiCAD, PCBA, troubleshooting, prototyping</dd>
+            <dd class="">KiCAD, PCBA, troubleshooting, prototyping</dd>
             <dt>Mechanical</dt>
-            <dd class="np">3D design, 3D printing, assembly, prototyping</dd>
+            <dd class="">3D design, 3D printing, assembly, prototyping</dd>
             <dt>Embedded</dt>
-            <dd class="np">C, C++, testing, integration</dd>
-            <dt>Perpetual learning</dt>
+            <dd class="">C, C++, testing, integration</dd>
+            <dt class="np">Perpetual learning</dt>
             <dd class="np">If there is a new skill I need to learn I go and learn it</dd>
           </dl>
-          <hr class="np" />
+          <hr />
+
         </div>
 
         <!-- METHODOLOGY -->
