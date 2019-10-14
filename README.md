@@ -1,6 +1,6 @@
 # Minimalistic résumé template: product manager role
 
-## Live demo: https://cv.rimutaka.me
+## Live demo: https://resume.rimutaka.me
 
 
 ## Résumé contents
@@ -22,7 +22,7 @@ I used some **commercial icons** from [FontAwesome Pro](https://fontawesome.com/
 ### Print or PDF versions
 
 Google Chrome prints a better version than FireFox, but neither is good enough when printed or saved as PDF.
-Append `?prn` to the URL to produce a simplified, single page version with a link to the full version on GitHub. E.g. https://cv.rimutaka.me/?prn.
+Append `?prn` to the URL to produce a simplified, single page version with a link to the full version on GitHub. E.g. https://resume.rimutaka.me/?prn.
 
 ----
 ## Thinking behind the format
